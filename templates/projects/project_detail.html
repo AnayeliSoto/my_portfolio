@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ project.title }} - My Portfolio{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ project.title }}</h1>
+    <img src="{% static project.image %}" alt="{{ project.title }}" class="project-detail-image">
+
+    <p>{{ project.summary }}</p>
+
+    <h3>Technologies Used:</h3>
+    <ul>
+        {% for tech in project.technologies %}
+            <li>{{ tech }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'portfolio:project_list' %}">← Back to Projects</a>
+</div>
+{% endblock %}

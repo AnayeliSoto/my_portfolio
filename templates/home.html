@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Home - My Portfolio{% endblock %}
+
+{% block content %}
+<h1>Welcome to My Portfolio</h1>
+<p>Here are some featured projects:</p>
+<div class="card-grid">
+    {% for item in projects %}
+        {% include "partials/card.html" with item=item detail_url="portfolio:project_detail" %}
+    {% endfor %}
+</div>
+{% endblock %}

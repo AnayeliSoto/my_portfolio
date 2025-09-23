@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Hobbies - My Portfolio{% endblock %}
+{% block content %}
+<h1>My Hobbies</h1>
+<div class="card-grid">
+    {% for item in hobbies %}
+        {% include "partials/card.html" with item=item detail_url="hobbies:hobby_detail" %}
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ hobby.name }} - My Portfolio{% endblock %}
+
+{% block content %}
+<h1>{{ hobby.name }}</h1>
+<img src="{% static hobby.image %}" alt="{{ hobby.name }}" style="max-width: 400px;">
+<p>{{ hobby.description }}</p>
+
+<a href="{% url 'hobbies:hobby_list' %}">← Back to Hobbies</a>
+{% endblock %}

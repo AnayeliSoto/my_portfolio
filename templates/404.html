@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found - My Portfolio{% endblock %}
+{% block content %}
+<h1>Oops! We couldn’t find that project.</h1>
+<p>It looks like the page you're looking for doesn't exist.</p>
+<a href="{% url 'home' %}">← Back to Home</a>
+{% endblock %}

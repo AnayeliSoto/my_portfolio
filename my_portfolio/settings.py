@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'portfolio',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-# *** UPDATED STATIC SETTINGS ***
-STATIC_URL = "/static/"  # added leading slash here!
+STATIC_URL = "/static/" 
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 

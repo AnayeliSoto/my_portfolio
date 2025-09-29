@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block title %}All Projects - My Portfolio{% endblock %}
+
 {% block content %}
 <h1>All Projects</h1>
 <div class="card-grid">
-    {% for item in projects %}
-        {% include "partials/card.html" with item=item detail_url="portfolio:project_detail" %}
+    {% for project in projects %}
+        {% include "partials/card.html" with project=project detail_url="portfolio:project_detail" %}
     {% endfor %}
 </div>
 {% endblock %}

@@ -4,7 +4,7 @@
 <h1>My Hobbies</h1>
 <div class="card-grid">
     {% for item in hobbies %}
-        {% include "partials/card.html" with item=item detail_url="hobbies:hobby_detail" %}
+        {% include "partials/card.html" with project=item detail_url="hobbies:hobby_detail" %}
     {% endfor %}
 </div>
 {% endblock %}

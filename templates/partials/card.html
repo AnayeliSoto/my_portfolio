@@ -1,26 +1,14 @@
 {% load static %}
 <div class="card">
-    <img src="{% static item.image %}" alt="{% if item.title %}{{ item.title }}{% else %}{{ item.name }}{% endif %}">
-    <h3>
-        {% if item.title %}
-            {{ item.title }}
-        {% else %}
-            {{ item.name }}
-        {% endif %}
-    </h3>
-    <p>
-        {% if item.summary %}
-            {{ item.summary }}
-        {% else %}
-            {{ item.description }}
-        {% endif %}
-    </p>
-    {% if item.slug %}
-        {% if detail_url %}
-            {% url detail_url item.slug as detail_link %}
-            <a href="{{ detail_link }}">View Details</a>
-        {% else %}
-            <a href="{% url 'portfolio:project_detail' item.slug %}">View Details</a>
-        {% endif %}
+    <img src="{% static project.image %}" alt="{{ project.title }}">
+    
+    <h3>{{ project.title }}</h3>
+    
+    <p>{{ project.summary|truncatechars:100 }}</p>
+    
+    {% if detail_url %}
+        <a href="{% url detail_url slug=project.slug %}">View Details</a>
+    {% else %}
+        <a href="{% url 'portfolio:project_detail' slug=project.slug %}">View Details</a>
     {% endif %}
 </div>

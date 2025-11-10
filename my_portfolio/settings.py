@@ -12,7 +12,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'unsafe-secret-key')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # Add your Render domain here after deployment
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'my-portfolio.onrender.com']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
 # --- APPLICATIONS ---
 INSTALLED_APPS = [
